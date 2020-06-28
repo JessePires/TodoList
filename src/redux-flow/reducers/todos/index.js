@@ -15,7 +15,7 @@ const Todos = (state = initialState, action) => {
       return state.map((todo) => {
         return todo.id !== action.payload.id 
           ? todo
-          : { ...todo, completed: !todo.completed }
+          : { ...todo, completed: !todo.completed } //return todo with completed value changed
       });
 
     default: return state

@@ -10,4 +10,4 @@
 - Create React App
 - Yarn
 
-<p>More changes coming soon</p>
+<p>More changes coming soon...</p>
