@@ -5,10 +5,14 @@ import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import reducer from './redux-flow/reducers/todos';
+import mainReducer from './redux-flow/reducers';
 
 // store creation of todos
-const store = createStore(reducer);
+const store = createStore(mainReducer);
+
+store.subscribe(() => {
+  console.log('App state: ', store.getState());
+});
 
 ReactDOM.render(
   <React.StrictMode>
