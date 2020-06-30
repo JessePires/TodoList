@@ -1,15 +1,24 @@
-import reducerTodos from './todos';
-import reducerVisibilityFilter from './visibilityFilter';
+import { combineReducers } from 'redux';
+import todos from './todos';
+import visibilityFilter from './visibilityFilter';
+
+/* BASICALLY, THIS IS HOW combineReducers WORKS
+*
+* const combineReducers = (reducers) => (state = {}, action) => {
+*  return Object.keys(reducers).reduce((nextState, key) => {
+*    return {
+*      ...nextState,
+*      [key]: reducers[key](state[key], action)
+*    }
+*  }, {});
+* };
+*/
 
 // this will be the App state
-const mainReducer = (state = {}, action) => {
-  return {
-    // return all of the todos to the todos prop
-    todos: reducerTodos(state.todos, action), 
-    
-    // return the visibility filter to visibilityFilter prop
-    visibilityFilter: reducerVisibilityFilter(state.visibilityFilter, action), 
-  };
-};
+export default combineReducers({
+  // return all of the todos to the todos prop
+  todos,
 
-export default mainReducer;
+  // return the visibility filter to visibilityFilter prop
+  visibilityFilter,
+});
