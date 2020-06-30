@@ -18,7 +18,7 @@ const ToDosList = ({ todos, handleToggleTodo }) => (
 );
 
 const mapStateToProps = (state) => ({
-  state: state.todos
+  todos: state.todos
 });
 
 const mapDispatchToProps = (dispatch) => ({
